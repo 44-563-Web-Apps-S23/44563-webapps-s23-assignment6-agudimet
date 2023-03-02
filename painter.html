@@ -29,6 +29,9 @@ function checkPainter(){
         alert("sorry");
     }
     document.getElementById('resultId').innerHTML = "good painter is "+good+" oops painter is "+oops;
+    if(oops>=10){
+            document.getElementById("guessButton").onclick = function() { alert("Sorry, ran out of guesses."); }
+        }
 }
     function selectImage(){
         switch (useImage) {
@@ -53,12 +56,12 @@ function checkPainter(){
 <div class="container">
 <form>
     <label for="pswId">The hidden painter name </label>
-    <input type ="password" id="pswId" value="Monet" style="width: 150px; height: 30px"> <br>
+    <input type ="password" class="form-control" id="pswId" value="Monet" style="width: 150px; height: 30px"> <br>
 
     <label for="painterId">Guess the painter </label>
-    <input type ="text"  id="painterId" style="width: 150px; height: 30px" > <br>
+    <input type ="text" class="form-control"  id="painterId" style="width: 150px; height: 30px" > <br>
 
-    <input type="button" onclick="checkPainter()" value="Check the guess">
+    <input type="button" class="btn btn-success" id="guessButton" onclick="checkPainter()" value="Check the guess">
 </form>
 </div>
 <p id="resultId"> </p>

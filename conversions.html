@@ -60,25 +60,21 @@
     <div class="container">
 <form>
     <label for="baseAmountId">Enter base amount </label>
-    <input type ="number" id="baseAmountId"  value=50> <br>
+    <input type ="number" class="form-control" id="baseAmountId"  value=50 style="width: 150px; height: 30px" >  <br>
 
     <label for="conversionId">Enter the conversion rate </label>
-    <input type ="number" id="conversionId"  value=50> <br>
+    <input type ="number" class="form-control" id="conversionId"  value=50 style="width: 150px; height: 30px"> <br>
 
-    <input type="button"  onclick="convert()" value="Show conversions"><br>
+    <input type="button" class="btn btn-primary"   onclick="convert()" value="Show conversions"><br>
 
+    <input type="radio" class="form-check-input" name="radiovalue" id="average" value="mean" onclick="chooseOp()">
+    <label class="form-check-label" for="average">average</label></br>
 
+    <input type="radio" class="form-check-input" name="radiovalue" id="max" value="maximum" onclick="chooseOp()">
+    <label class="form-check-label" for="max">max</label></br>
 
-    <input type="radio" name="radiovalue" id="average" value="mean" onclick="chooseOp()">
-    <label for="average">average</label></br>
-
-    <input type="radio" name="radiovalue" id="max" value="maximum" onclick="chooseOp()">
-    <label for="max">max</label></br>
-
-    <input type="radio" name="radiovalue" id="min" value="minimum"  onclick="chooseOp()">
-    <label for="min">min</label></br>
-
-  <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+    <input type="radio" class="form-check-input" name="radiovalue" id="min" value="minimum"  onclick="chooseOp()">
+    <label class="form-check-label" for="min">min</label></br>
 </form>
 </div>
 
