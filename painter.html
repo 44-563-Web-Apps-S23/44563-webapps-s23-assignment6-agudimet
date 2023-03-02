@@ -4,10 +4,20 @@
     <title>
         Painter
     </title>
+    <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+   integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+   integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
  </head>
  <script> 
     let good = 0;
     let oops=0;
+    let useImage=1;
 function checkPainter(){
     let secretPainter = document.getElementById("pswId").value;
     let guess = document.getElementById("painterId").value;
@@ -20,40 +30,41 @@ function checkPainter(){
     }
     document.getElementById('resultId').innerHTML = "good painter is "+good+" oops painter is "+oops;
 }
+    function selectImage(){
+        switch (useImage) {
+          case 1:
+              document.getElementById("img").src = "gaura.jpg";
+              useImage=2;
+              break;
+           case 2:
+             document.getElementById("img").src = "ulex.jpg";
+             useImage=3;
+             break;
+           case 3:
+             document.getElementById("img").src = "davidia.jpg";
+             useImage=1;
+           break;
+}
+    }
 </script>
 <body>
 <h3>Painter entry Anuradha Gudimetla</h3>
 <h2>Getting input</h2>
-
+<div class="container">
 <form>
     <label for="pswId">The hidden painter name </label>
-    <input type ="password" id="pswId" value="Monet"> <br> <br>
+    <input type ="password" id="pswId" value="Monet" style="width: 150px; height: 30px"> <br>
 
     <label for="painterId">Guess the painter </label>
-    <input type ="text" id="painterId" autofocus > <br>
+    <input type ="text"  id="painterId" style="width: 150px; height: 30px" > <br>
 
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
+</div>
 <p id="resultId"> </p>
 
-
-
-<!-- <script> 
-
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-</script> -->
-
+<div class="container" onclick="selectImage()">
+    <img src="gaura.jpg" id="img" class="img-fluid" alt="Machilus plant"width="100" height="100" >
+</div>
 </body>
 </html> 
